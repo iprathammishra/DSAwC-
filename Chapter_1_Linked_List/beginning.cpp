@@ -1,5 +1,3 @@
-// Inserting a node at the beginning of the linked list.
-
 #include <iostream>
 using namespace std;
 
