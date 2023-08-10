@@ -4,5 +4,10 @@ Data Structures in C++.
 
 ### Folder Structure
 
+0. `Revision`
+
+   - Revision of C++ concepts.
+
 1. `Chapter 1: Linked List Implementation`
+
    - Inserting the node at the beginning of the linked list. (beginning.cpp)
