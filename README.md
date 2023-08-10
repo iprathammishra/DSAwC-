@@ -13,4 +13,5 @@ Data Structures in C++.
    - Inserting the node at the beginning of the linked list. (beginning.cpp)
    - Inserting the node at nth position. (insertingN.cpp)
    - Deleting the node at nth position. (deleteN.cpp)
-   - Reversing a linked list. (reverseLL.cpp)
+   - Reversing a linked list (iterative method). (reverseLL.cpp)
+   - Reversing a linked list (recursive method). (reverseLLRecursion.cpp)
