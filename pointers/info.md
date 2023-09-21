@@ -117,3 +117,11 @@ So, its pretty cool as well. I am finally learning some unknown stuff about c++.
 So, it turns out that we can access arrays simply by pointer reference. I am not going to talk much about it.
 
 > Checkout /pointers/vi_arr.cpp for code snippets.
+
+### Arrays as function arguments
+
+Basically, it tells how to use arrays as functional arguments with pointers logic.
+
+This tells is the arrays are always `call-by-reference` and not the call-by-value.
+
+> Checkout /pointers/vii_arrarg.cpp for code snippets.
