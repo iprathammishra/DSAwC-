@@ -109,3 +109,11 @@ So, its pretty cool actually.
 Basically, it has two major components that needs to be understood here. One, is that its just implementing and using de-referencing with user-defined functions and the second, is that instead of passing the normal variables as the arguments we pass the address of the variables.
 
 > Checkout /pointers/v_call.cpp for code snippets.
+
+### Pointers and Arrays
+
+So, its pretty cool as well. I am finally learning some unknown stuff about c++.
+
+So, it turns out that we can access arrays simply by pointer reference. I am not going to talk much about it.
+
+> Checkout /pointers/vi_arr.cpp for code snippets.
