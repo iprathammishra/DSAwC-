@@ -125,3 +125,14 @@ Basically, it tells how to use arrays as functional arguments with pointers logi
 This tells is the arrays are always `call-by-reference` and not the call-by-value.
 
 > Checkout /pointers/vii_arrarg.cpp for code snippets.
+
+### Character arrays and pointers
+
+`Character arrays == strings`
+`Size of array >= no. of characters in string + 1`
+Null character: `\0`
+
+1. Arrays and pointers are different types that are used in similar manner.
+2. Arrays are always passed to function by reference.
+
+> Checkout /pointers/viii_str.cpp for the code snippets.
