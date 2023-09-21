@@ -101,3 +101,11 @@ int***** x = &w;
 > Checkout /pointers/iv_point2point.cpp for code snippets.
 
 _Don't worry we will see the use-cases of pointer-to-pointer in the upcoming project sections._
+
+### Poiners as functions arguments - call by reference
+
+So, its pretty cool actually.
+
+Basically, it has two major components that needs to be understood here. One, is that its just implementing and using de-referencing with user-defined functions and the second, is that instead of passing the normal variables as the arguments we pass the address of the variables.
+
+> Checkout /pointers/v_call.cpp for code snippets.
