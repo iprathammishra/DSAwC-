@@ -37,3 +37,27 @@ p + 2 // similarly, this will give us +8 value of the actual address.
 ```
 
 > Checkout /pointers/ii_working.cpp for the code snippets.
+
+### Pointer types, void pointer, pointer arithmetic
+
+It turns out that we can typecast the pointer variables to our own desired datatypes. And there is something very strange that is called a void or a generic pointer that has no datatype aka the datatype of a generic pointer is `void`.
+
+Here is the code.
+
+```c++
+int a = 10;
+int *p;
+p = &a;
+
+char *p0;
+p0 = (char *)p; // This is called pointer typecasting.
+
+// Let's discuss about the generic pointers.
+
+void *p2;
+p2 = p0;
+
+// We can only deal with the address part of the pointer and can not perform any arithmetic pointer operations onto it. It's a bit strange but we will see the use cases of these generic pointers in the upcoming lessons.
+```
+
+> Checkout /poiners/iii_types.cpp for code snippets.
