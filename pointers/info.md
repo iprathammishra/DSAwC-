@@ -126,7 +126,7 @@ This tells is the arrays are always `call-by-reference` and not the call-by-valu
 
 > Checkout /pointers/vii_arrarg.cpp for code snippets.
 
-### Character arrays and pointers
+### Character arrays and pointers - part 1
 
 `Character arrays == strings`
 `Size of array >= no. of characters in string + 1`
@@ -136,3 +136,9 @@ Null character: `\0`
 2. Arrays are always passed to function by reference.
 
 > Checkout /pointers/viii_str.cpp for the code snippets.
+
+### Charater arrays and pointers - part 2
+
+It was simple, just talked about how we can make something constant with the `const` keyword and restrict the modification on that variable.
+
+> Checkout /pointers/ix_str2.cpp for code snippets.
