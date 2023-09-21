@@ -61,3 +61,43 @@ p2 = p0;
 ```
 
 > Checkout /poiners/iii_types.cpp for code snippets.
+
+### Pointer to pointer
+
+This is a mess.
+
+It turn out to be that we can point pointer to a different pointer and that pointer to maybe some another pointer and can go like that to infinity.
+
+Damn! Here are some code snippets:
+
+```c++
+int x = 5;
+int* p = &a; // So, p stores the address of a.
+
+*p = 6; // We change the value of a by 6.
+
+int** q = &p; // Now, q stores the address of p.
+int*** r = &q; // Now, r stores the address of q.
+
+// If we de-reference it.
+
+*p // This will store the value of (a).
+*q // This will store the value of (p).
+*(*q) // (*q) will store the value of p and *(*q) will store what the value p (as a address) is storing in itself i.e., 6
+*(*(*r)) // (*r) will store the value of q and *(*r) will store what the value (as a address) of q is storing let say x and *(*(*r)) will store what x is storing in itself i.e., 6.
+
+// Consider this like that:
+
+int***** x = &w;
+
+*x // This will store the value of w.
+**x // This will store what the value of w as a address is storing in itself.
+.
+.
+.
+*****x // This will give the final value.
+```
+
+> Checkout /pointers/iv_point2point.cpp for code snippets.
+
+_Don't worry we will see the use-cases of pointer-to-pointer in the upcoming project sections._
