@@ -12,9 +12,9 @@ int main()
     // free(A); this will release the memory.
 
 
-    int *B = (int*)realloc(A, 2*n*sizeof(int)); // this is reallocating memory block. such cases will be useful when we want to increase the size of the memory block.
+    // int *B = (int*)realloc(A, 2*n*sizeof(int)); this is reallocating memory block. such cases will be useful when we want to increase the size of the memory block.
 
-    printf("prev block address = %d, new address = %d\n", A, B);
+    // printf("prev block address = %d, new address = %d\n", A, B);
 
     for(int i = 0; i<n; i++)
     {
