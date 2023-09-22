@@ -217,3 +217,53 @@ int main()
     int C[2][3][3];
 }
 ```
+
+### Pointers and dynamic memory - stack vs heap
+
+Basically, we learn about heap data structure.
+
+We need to know about 4 functions and 2 operators.
+
+- C: (functions)
+  1. malloc
+  2. calloc
+  3. realloc
+  4. free
+- C++: (operators)
+  1. new
+  2. delete
+
+Here is the C++ style code.
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a; // goes on stack
+    int *p;
+    p = new int; // goes on heap
+    *p = 10; // here, we are putting value to that pointer variable
+    delete p; // here, we are releasing the memory from the heap so that it won't get cluttered.
+    p = new int[20]; // here, we are creating array and p will point to the base address of that array and we can access things like P[0], P[1] or *P, *(P + 1)
+    delete[] p; // this will release the entire memory of array
+}
+```
+
+Heaps are useful when it comes to efficient memory management.
+
+### Dynamic memory allocation in C - malloc calloc realloc free
+
+We will see how we can allocate block of memory in heap with functions like `malloc`, `calloc`, `realloc` and `free`. Using the C programming language.
+
+```c
+malloc = void* malloc(size_t size) // Here, void * is is the void or generic pointer and size_t is the unsigned integer and size is the size of data type in bytes.
+calloc = void* calloc(size_t num, size_t size) // Here, num is the number elements and size is the size of data type in bytes.
+realloc = void* realloc(void* Ptr, size_t size) // To realloc a memory of a block.
+```
+
+_Only implemented with C._
+
+> Checkout /pointers/x_memo.c for the code snippets.
