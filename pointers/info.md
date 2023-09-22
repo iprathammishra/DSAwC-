@@ -267,3 +267,9 @@ realloc = void* realloc(void* Ptr, size_t size) // To realloc a memory of a bloc
 _Only implemented with C._
 
 > Checkout /pointers/x_memo.c for the code snippets.
+
+## You can also learn the following:
+
+1. Pointers to function
+2. Function pointers and callbacks
+3. Memory leak in C/C++
