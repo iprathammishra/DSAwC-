@@ -137,8 +137,83 @@ Null character: `\0`
 
 > Checkout /pointers/viii_str.cpp for the code snippets.
 
-### Charater arrays and pointers - part 2
+### Character arrays and pointers - part 2
 
 It was simple, just talked about how we can make something constant with the `const` keyword and restrict the modification on that variable.
 
 > Checkout /pointers/ix_str2.cpp for code snippets.
+
+### Pointers and multi-dimensional arrays
+
+So, this is basically pointers concept in 2D arrays.
+
+Let's understand the code:
+
+```c++
+int B[2][3] // So, this is basically a 2D array of 2 integers.
+
+int *p[3] = B; // will return a pointer to 1D array of 3 integers.
+// it is strange but the good thing is that we only need this pointer to get all the other values of the 2D arrays.
+
+B or &B[0] // this will contain the base address of B[0] => 1D array of 3 integer. let's say it is 400.
+*B or B[0] or &B[0][0] // This will return the same thing as above.
+B + 1 // This is 400 + size of 1D array of 3 integers. This will give 412.
+*(B + 1) or B[1] or &B[1][0] // This will return the same thing as above.
+*(B + 1) + 2 or B[1] + 2 or &B[1][2] // This is basically pointer arithmetic. 412 + 8 = 420.
+*(*B + 1) // The key is to go step-by-step. Here, *B is basically B[0] which is 400 and we then perform pointer arithmetic to is adding 4, 400 + 4 = 404 and then its basically *(404) => which is the value address 404 contains.
+
+// Also.
+
+B[i][j] = *(B[i] + j) == *(*(B + i) + j) //  These all means the same thing.
+```
+
+`Let's do part 2 of this topic now.`
+
+Let's do 3D arrays now.
+
+```c++
+int c[3][2][2]
+
+int *p[2][2] = C;
+
+C or *C or C[0] or &C[0][0] // This will give the base address.
+
+
+// Similarly
+C[i][j][k] = *(C[i][j] + k) = *(*(C[i] + j) + k) = *(*(*(C + i) + j) + k) // These all means the same thing.
+
+// Consider the above example like this:
+// mlist = [
+//     [
+//         [1, 2],
+//         [3, 4]
+//     ],
+//     [
+//         [5, 6],
+//         [7, 8]
+//     ],
+//     [
+//         [9, 0],
+//         [2, 4]
+//     ]
+// ]
+
+*(C[0][1] + 1) or C[0][1][1] // For this get the base address of C[0][1] and then do the pointer arithmetic and then resolve the value from the address.
+*(C[1] + 1) or C[1][1] or &C[1][1][0] // These all are similar. => This will give the address.
+```
+
+We can pass the multi-dimensional array as arguments for functions like this:
+
+```c++
+
+void Func(int *A); // 1D
+void Func1(int *A[5]); // 2D
+void Func2(int *A[3][3]); // 3D
+
+int main()
+{
+    int A[2];
+    int B[3][5];
+    int C[2][3][3];
+}
+```
