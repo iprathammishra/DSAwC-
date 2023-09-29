@@ -6,7 +6,8 @@ This repository contains Arrays, Linked-List, Stack, Queues, Tree and Graphs. Th
 
 - Checkout [Pointers](pointers/info.md).
 - Folder `proto` is for testing and prototyping.
-- Folder `linked_list` contains all the implementation and operations that can be performed on and with a Linked List.
+- Folder `array` contains all the implementation and operations that can be performed on and with a Array.
+- Folder `linkedlist` contains all the implementation and operations that can be performed on and with a Linked List.
 - Folder `stack` contains all the implementation and operations that can be performed on and with a Stack.
 - Folder `queue` contains all the implementation and operations that can be performed on and with a Queue.
 - Folder `tree` contains all the implementation and operations that can be performed on and witn a Tree.
