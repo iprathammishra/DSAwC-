@@ -27,3 +27,11 @@ cmake --build .
 ```
 
 5. Executable will be present in the `Debug/` folder.
+
+### Or,
+
+We can just simply use this command:
+
+```bash
+g++ <main-file>.cpp <other-files>.cpp ... -o <exe-name>
+```
