@@ -1,8 +1,6 @@
 #include <iostream>
 #include "functions.h"
-
 using namespace std;
-
 void OneDimensionalArray()
 {
     int arr[50], n, idx;
