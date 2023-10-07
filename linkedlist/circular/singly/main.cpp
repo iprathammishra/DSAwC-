@@ -1,1 +1,6 @@
-// yet to be implemented
+#include <iostream>
+using namespace std;
+int main()
+{
+    return 0;
+}
