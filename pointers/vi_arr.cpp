@@ -1,7 +1,5 @@
 #include <iostream>
-
 using namespace std;
-
 int main()
 {
     int A[] = {2, 4, 5, 8, 1};

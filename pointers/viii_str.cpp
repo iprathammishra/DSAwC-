@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string.h>
-
 using namespace std;
 void print(char *C);
-
 void print(char *C)
 {
     int i = 0;
@@ -14,7 +12,6 @@ void print(char *C)
     }
     cout << endl;
 }
-
 int main()
 {
     char C[] = "JOHN"; // This is how you use strings and we cannot put C[4] beacuse it it take \0: null character to make it a string.

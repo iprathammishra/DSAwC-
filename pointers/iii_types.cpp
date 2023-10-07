@@ -1,7 +1,5 @@
 #include <iostream>
-
 using namespace std;
-
 void voidpointer(int *p);
 
 int main()

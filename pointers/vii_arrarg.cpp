@@ -1,9 +1,7 @@
 #include <iostream>
-
 using namespace std;
 int SumOfElements(int *A, int size);
 void Double(int *A, int s);
-
 int SumOfElements(int *A, int size) // "int *A or int A[]" ..its the same...
 {
     int i, sum = 0;
@@ -13,7 +11,6 @@ int SumOfElements(int *A, int size) // "int *A or int A[]" ..its the same...
     }
     return sum;
 }
-
 void Double(int *A, int s)
 {
     for (int i = 0; i < s; i++)
@@ -21,7 +18,6 @@ void Double(int *A, int s)
         *(A + i) = 2 * (*(A + i)); // We can use A[i] = 2*A[i] its the same thing.
     }
 }
-
 int main()
 {
     int A[] = {1, 2, 3, 4, 5};
