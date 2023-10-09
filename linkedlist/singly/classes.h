@@ -1,13 +1,11 @@
 #ifndef CLASSES_H
 #define CLASSES_H
-
 class Node
 {
 public:
     int data;
     Node *next;
 };
-
 class LinkedList
 {
 public:
@@ -21,5 +19,4 @@ public:
     void displayList();
     void deleteNode(int value);
 };
-
 #endif
