@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 void voidpointer(int *p);
-
 int main()
 {
     // 1025 = 00000000 00000000 00000100 00000001
@@ -24,7 +23,6 @@ int main()
 
     return 0;
 }
-
 void voidpointer(int *p)
 {
     void *p1;
