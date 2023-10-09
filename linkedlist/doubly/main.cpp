@@ -1,7 +1,5 @@
 #include <iostream>
-
 using namespace std;
-
 class DLLNode
 {
 public:
@@ -9,7 +7,6 @@ public:
     DLLNode *prev;
     DLLNode *next;
 };
-
 int main()
 {
     return 0;
