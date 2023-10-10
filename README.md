@@ -10,8 +10,6 @@ This repository contains Arrays, Linked-List, Stack, Queues, Tree and Graphs. Th
 - Folder `linkedlist` contains all the implementation and operations that can be performed on and with a Linked List.
 - Folder `stack` contains all the implementation and operations that can be performed on and with a Stack.
 - Folder `queue` contains all the implementation and operations that can be performed on and with a Queue.
-- Folder `tree` contains all the implementation and operations that can be performed on and witn a Tree.
-- Folder `graph` contains all the implementation and operations that can be performed on and with a Graph.
 
 ### Useful links:
 
