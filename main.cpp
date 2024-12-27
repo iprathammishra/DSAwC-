@@ -11,5 +11,6 @@ template <typename T, typename... Args> void dbg(const T& arg, const Args&... ar
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  
   return 0;
 }
