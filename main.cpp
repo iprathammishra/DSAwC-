@@ -11,5 +11,15 @@ template <typename T, typename... Args> void dbg(const T& arg, const Args&... ar
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  int t; cin >> t;
+  while (t--) {
+    long long ans = 1;
+    long long n; cin >> n;
+    while (n > 3) {
+      n /= 4;
+      ans *= 2;
+    }
+    cout << ans << endl;
+  }
   return 0;
 }
