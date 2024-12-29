@@ -13,11 +13,12 @@ int main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
   int t; cin >> t; 
   while (t--) {
+    int n; cin >> n;
     string s; cin >> s;
     vector<string> stk;
 
     int ans = 0;
-    int n = (int) s.size(); int i = 0;
+    n = (int) s.size(); int i = 0;
     while (i < n) {
       if (isdigit(s[i])) {
         string ts = "";
