@@ -15,36 +15,27 @@ int main() {
   while (t--) {
     string s; cin >> s;
     vector<string> stk;
-    int n = (int) s.size();
-    for (int i = 0; i < n; i++) { stk.push_back(string(1, s[i])); }
-    int i; vector<string> temp;
-    
-    n = (int) stk.size(); i = 0; temp = {};
-    while (i < n) {
-      if (stk[i] == "*" || stk[i] == "/") {
-        int val = stoi(temp.back());
-        temp.pop_back();
-        if (stk[i] == "*") { temp.push_back(to_string(val * stoi(stk[i+1]))); }
-        else { temp.push_back(to_string(val / stoi(stk[i+1]))); }
-        i++;
-      } else { temp.push_back(stk[i]); }
-      i++;
-    }
-    stk = temp;
 
-    n = (int) stk.size(); i = 0; temp = {};
+    int ans = 0;
+    int n = (int) s.size(); int i = 0;
     while (i < n) {
-      if (stk[i] == "+" || stk[i] == "-") {
-        int val = stoi(temp.back());
-        temp.pop_back();
-        if (stk[i] == "+") { temp.push_back(to_string(val + stoi(stk[i+1]))); }
-        else { temp.push_back(to_string(val - stoi(stk[i+1]))); }
+      if (isdigit(s[i])) {
+        string ts = "";
+        while (isdigit(s[i])) { ts.push_back(s[i]); i++; }
+        stk.push_back(ts);
+      }
+      else if (s[i] == '/' || s[i] == '*') {
+        int num = stoi(stk.back());
+        stk.pop_back();
+        if (s[i] == '/') { stk.push_back(to_string(num / stoi(string(1, s[i+1])))); }
+        else { stk.push_back(to_string(num * stoi(string(1, s[i+1])))); }
         i++;
-      } else { temp.push_back(stk[i]); }
-      i++;
+      } else { stk.push_back(string(1, s[i])); } i++;
+
+      ans = max(ans, (int) stk.size());
     }
 
-    cout << temp[0] << endl;
+    cout << ans << endl;
   }
 
   return 0;
