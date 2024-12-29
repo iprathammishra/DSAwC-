@@ -36,7 +36,6 @@ int main() {
       }
       i++;
     }
-
     TRACE(a);
   }
   return 0;
