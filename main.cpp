@@ -3,16 +3,5 @@ using namespace std;
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
-  int t; cin >> t;
-  while (t--) {
-    int n; cin >> n;
-    bool count = false;
-    vector<int> a(n); for (int i = 0; i < n; i++) { cin >> a[i]; }
-    for (int i = 0; i+1 < n; i++) {
-      if (2 * min(a[i], a[i+1]) > max(a[i], a[i+1])) { count = true; break;}
-    }
-    if (count == true) { cout << "YES" << endl; }
-    else { cout << "NO" << endl; }
-  }
   return 0;
 }
