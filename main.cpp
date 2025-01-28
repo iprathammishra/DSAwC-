@@ -1,16 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-long long cycle(int a, int b) {
-  if (a == b) { return 1; }
-  if (a > b) { return 0; }
-  int one = cycle(a+1, b);
-  int two = cycle(a+2, b);
-  int three = cycle(a+3, b);
-  return one + two + three;
+void cycle(long long x, long long n, bool& res) {
+  if (x == n) { res = true; return; }
+  if (x > n) { res = res || false; return; }
+  cycle(x*10 * 1LL, n, res); cycle (x*20 * 1LL, n, res);
 }
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
-  int a, b; cin >> a >> b;
-  cout << cycle(a, b) << endl;
+  int tt; cin >> tt;
+  while (tt--) {
+    long long n; cin >> n;
+    bool res = false;
+    cycle(1LL, n, res);
+    res ? cout << "YES\n" : cout << "NO\n";
+  } 
   return 0;
 }
