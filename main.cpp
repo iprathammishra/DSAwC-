@@ -4,24 +4,21 @@ using namespace std;
 
 int32_t main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
-  int n, k; cin >> n >> k;
-  vector<int> a(n);
-  for (int i = 0; i < n; i++)
-    cin >> a[i];
-  unordered_map<int, int> mmap;
-  int L = 0, R = 0;
-  long long res = 0;
-  while (R < n) {
-    mmap[a[R]]++;
-    while ((int) mmap.size() > k) {
-      mmap[a[L]]--;
-      if (mmap[a[L]] == 0) 
-        mmap.erase(a[L]);
-      L++;
+  ll w, h, n; cin >> w >> h >> n;
+  ll low = max(w, h);
+  ll high = low;
+  while ((high / w) * (high / h) < n) 
+    high *= 2;
+  ll ans = high;
+  while (low <= high) {
+    ll mid = low + (high-low)/2;
+    if ((mid/w) * (mid/h) >= n) {
+      ans = mid;
+      high = mid-1;
     }
-    res += (R-L+1);
-    R++;
+    else 
+      low = mid+1;
   }
-  cout << res << endl;
+  cout << ans << endl;
   return 0;
 }
