@@ -3,26 +3,32 @@ using namespace std;
 
 int32_t main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
-  int n, k; cin >> n >> k;
+  int n; cin >> n;
   vector<int> a(n);
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n; i++) 
     cin >> a[i];
+  sort(begin(a), end(a));
+  int k; cin >> k;
   while (k--) {
-    int q; cin >> q;
-    int L = 0, R = n-1;
-    bool found = 0;
-    while (L <= R) {
-      int mid = L + (R-L)/2;
-      if (a[mid] == q) {
-        found = 1;
-        break;
+    int l, r; cin >> l >> r;
+    int PL = 0, PR = n-1;
+    int res = 0;
+    while (PL <= PR) {
+      int mid = PL + (PR-PL)/2;
+      if (a[mid] >= l && a[mid] <= r) {
+        while (a[PL] < l) 
+          PL++;
+        res += (mid - PL + 1);
+        PL = mid+1;
       }
-      if (a[mid] < q) 
-        L = mid+1;
-      else
-        R = mid-1;
+      else {
+        if (a[mid] >= l && a[mid] >= r) 
+          PR = mid-1;
+        else
+          PL = mid+1;
+      }
     }
-    found == 1 ? cout << "YES\n" : cout << "NO\n";
+    cout << res << " ";
   }
   return 0;
 }
