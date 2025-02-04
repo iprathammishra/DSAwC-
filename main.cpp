@@ -5,19 +5,21 @@ using namespace std;
 
 int32_t main() {
   PRATHAM
-  ll n, x, y; cin >> n >> x >> y;
-  if (n == 1) 
-    cout << min(x, y) << endl;
-  else {
-    ll low = 0, high = n * min(x, y);
-    while (low <= high) {
-      ll mid = low + (high - low)/2;
-      if (((mid/x) + (mid/y)) < n-1)
-        low = mid+1;
-      else  
-        high = mid-1;
-    }
-    cout << low + min(x, y) << endl;
-  }
+  ll tt; cin >> tt;
+  while (tt--) {
+    ll n; cin >> n;
+    ll odd = 0, even = 0;
+    vector<ll> a(n);
+    for (auto& i : a)
+      {cin >> i; if (i&1) odd++; else even++;}
+    if (even == 0)
+      cout << odd-1 << endl;
+    else
+      cout << odd+1 << endl;
+ }
   return 0;
 }
+
+/*
+3 1 4 1 5 9 2 6 5 3
+*/
