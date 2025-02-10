@@ -6,14 +6,24 @@ using namespace std;
 int32_t main() {
   PRATHAM
   int n; cin >> n;
-  vector<int> a(n);
-  for (auto& i : a)
-    cin >> i;
-  int res = 0;
-  for (int i = 0; i+1 < n; i++) {
-    if (a[i] > a[i+1])
-      {res += abs(a[i] - a[i+1]); a[i+1] = a[i];}
+  int sum = (n*(n+1))/2;
+  int target = sum/2;
+  vector<int> s1, s2;
+  if (sum & 1)
+    cout << "NO" << endl;
+  else {
+    for (int i = n; i >= 1; i--) {
+      if (i <= target) 
+        {s1.push_back(i); target -= i;}
+      else
+        s2.push_back(i);
+    }
+    cout << "YES" << endl;
+    cout << (int)s1.size() << endl;
+    for (auto& i : s1) cout << i << ' ';
+    cout << endl << (int)s2.size() << endl;
+    for (auto& i : s2) cout << i << " ";
+    cout << endl;
   }
-  cout << res << endl;
   return 0;
 }
