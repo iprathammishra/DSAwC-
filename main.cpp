@@ -6,12 +6,14 @@ using namespace std;
 int32_t main() {
   PRATHAM
   int n; cin >> n;
-  set<pair<string, string>> S;
-  while (n--) {
-    pair<string, string> p;
-    cin >> p.first >> p.second;
-    S.insert(p);
+  vector<int> a(n);
+  for (auto& i : a)
+    cin >> i;
+  int res = 0;
+  for (int i = 0; i+1 < n; i++) {
+    if (a[i] > a[i+1])
+      {res += abs(a[i] - a[i+1]); a[i+1] = a[i];}
   }
-  cout << (int)S.size() << endl;
+  cout << res << endl;
   return 0;
 }

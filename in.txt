@@ -1,6 +1,2 @@
 5
-birch yellow
-maple red
-birch yellow
-maple yellow
-maple green
+3 2 5 1 7
