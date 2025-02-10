@@ -6,24 +6,23 @@ using namespace std;
 int32_t main() {
   PRATHAM
   int n; cin >> n;
-  int sum = (n*(n+1))/2;
-  int target = sum/2;
-  vector<int> s1, s2;
-  if (sum & 1)
-    cout << "NO" << endl;
-  else {
-    for (int i = n; i >= 1; i--) {
-      if (i <= target) 
-        {s1.push_back(i); target -= i;}
-      else
-        s2.push_back(i);
-    }
-    cout << "YES" << endl;
-    cout << (int)s1.size() << endl;
-    for (auto& i : s1) cout << i << ' ';
-    cout << endl << (int)s2.size() << endl;
-    for (auto& i : s2) cout << i << " ";
-    cout << endl;
+  vector<int> a(n);
+  multiset<int> S;
+  for (auto& i : a) {
+    cin >> i;
+    auto it = S.upper_bound(i);
+    if (it != end(S))
+      S.erase(it);
+    S.insert(i);
   }
+  cout << (int)S.size() << endl;
   return 0;
 }
+
+/*
+1,8 +1
+2,5 +1
+4,5
+2,2
+3,1
+*/
