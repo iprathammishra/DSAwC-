@@ -12,29 +12,24 @@ template <typename T, typename... Args> void dbg(const T& arg, const Args&... ar
 #define bug(...) { cerr << "Line " << __LINE__ << ": "; dbg(__VA_ARGS__); cerr << endl; }
 signed main() {
   PRATHAM
-  int N, K; cin >> N >> K;
-  vector<vector<int>> forest(N+1, vector<int>(N+1, 0));
+  int N, M, Q; cin >> N >> M >> Q;
+  vector<vector<int>> pref2d(N+1, vector<int>(M+1, 0));
+  vector<vector<int>> rectangle(N, vector<int>(M, 0));
+  int count = 1;
   for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      char ch;
-      cin >> ch;
-      if (ch == '.')
-        forest[i+1][j+1] = 0;
-      else
-        forest[i+1][j+1] = 1;
+    for (int j = 0; j < M; j++) {
+      cin >> rectangle[i][j];
     }
   }
-  vector<vector<int>> pref_2D(N+1, vector<int>(N+1, 0));
   for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-      pref_2D[i][j] = forest[i][j] + pref_2D[i-1][j] + pref_2D[i][j-1] - pref_2D[i-1][j-1];
+    for (int j = 1; j <= M; j++) {
+      pref2d[i][j] = rectangle[i-1][j-1] + pref2d[i][j-1] + pref2d[i-1][j] - pref2d[i-1][j-1];
     }
   }
-  // bug(forest)
-  while (K--) {
-    int from_row, to_row, from_col, to_col;
+  while (Q--) {
+    int from_row, from_col, to_row, to_col;
     cin >> from_row >> from_col >> to_row >> to_col;
-    cout << pref_2D[to_row][to_col] - pref_2D[from_row - 1][to_col] - pref_2D[to_row][from_col - 1] + pref_2D[from_row - 1][from_col - 1] << endl;
+    cout << pref2d[to_row][to_col] - pref2d[to_row][from_col-1] - pref2d[from_row-1][to_col] + pref2d[from_row-1][from_col-1] << endl;
   }
   return 0;
 }
